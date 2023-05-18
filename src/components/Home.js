@@ -2,6 +2,32 @@ import React, { useEffect, useRef } from 'react';
 import Chart from 'chart.js/auto';
 import { Link } from 'react-router-dom';
 import CatalogTitle from './CatalogTitle';
+import Chatbot from './Chatbot'; 
+
+const chatContainerStyle = {
+  position: 'fixed',
+  bottom: '20px',
+  right: '20px',
+  width: '300px',
+  height: '400px',
+  borderRadius: '8px',
+  backgroundColor: '#f4f4f4',
+  boxShadow: '0 2px 4px rgba(0, 0, 0, 0.2)',
+};
+
+const inputContainerStyle = {
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'flex-end',
+  padding: '8px',
+};
+
+// Estilos personalizados para el input
+const inputStyle = {
+  width: '100%',
+  padding: '8px',
+  borderRadius: '20px',
+};
 
 const Home = () => {
     const salesChartRef = useRef(null);
@@ -116,6 +142,9 @@ const Home = () => {
                 <div className="bg-gray-800 p-4 shadow-lg">
                     <canvas ref={customersChartRef} />
                 </div>
+            </div>
+            <div>
+              <Chatbot/>
             </div>
         </div>
     );
